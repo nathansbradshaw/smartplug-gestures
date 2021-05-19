@@ -10,7 +10,7 @@ import './App.css';
 require('dotenv').config();
 
 function App() {
-  const REACT_APP_IFTTT_KEY = process.env.REACT_APP_MAKER_KEY
+  const MAKER_KEY = process.env.REACT_APP_MAKER_KEY
   console.log(REACT_APP_IFTTT_KEY)
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -72,7 +72,7 @@ function App() {
               //   'Access-Control-Allow-Origin' : '*'
               // }
             };
-            fetch('https://maker.ifttt.com/trigger/light_off/with/key/'+ REACT_APP_IFTTT_KEY, requestOptions)
+            fetch('https://maker.ifttt.com/trigger/light_off/with/key/'+ MAKER_KEY, requestOptions)
               .then(response => console.log(response))
               
           } else if (gesture.gestures[maxConfidence].name === "thumbs_up" ) {
@@ -84,7 +84,7 @@ function App() {
               //   'Access-Control-Allow-Origin' : '*'
               // }
             };
-            fetch('https://maker.ifttt.com/trigger/light_on/with/key/' + REACT_APP_IFTTT_KEY, requestOptions)
+            fetch('https://maker.ifttt.com/trigger/light_on/with/key/' + MAKER_KEY, requestOptions)
               .then(response => console.log(response))
               
           }
